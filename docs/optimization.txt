@@ -1,0 +1,116 @@
+ec_mult: 
+
+	3.modd 3 cycles
+		cycles: 1860541 + 
+		WNS sp: 0.266
+		WNS hd: 0.017
+		# LUT : 46.51% (42.54%) (4.92%) modadder
+		# Reg : 32.16% (26.49%) (1.47%) modadder
+
+
+	2. mont one cycle
+		cycles: 1860541
+		WNS sp: 0.093
+		WNS hd: 0.009
+		# LUT : 45.57% (42.77%) (7.44%)
+		# Reg : 30.96% (25.30%) (1.83%)
+	
+
+
+	1. baseline
+		cycles: 3694345
+		WNS sp: 0.074
+		WNS hd: 0.014
+		# LUT : 44.09% (41.28%)
+		# Reg : 32.32% (31.00%)
+
+
+-----------------------------------------------------
+
+ec_adder_v3 : (handles infinity cases)
+
+
+	3.modd 3 cycles
+		cycles: 4665
+		WNS sp: 0.174
+		WNS hd: 0.014
+		# LUT : 42.69% (4.9%) modadder
+		# Reg : 26.35% (1.46%) modadder
+
+	2.mont one cycle
+		cycles: 4662
+		WNS sp: 0.062
+		WNS hd: 0.017
+		# LUT : 42.71% (6.45%)
+		# Reg : 25.31% (1.84%)
+
+	1.new mont (optimised): 	
+		cycles: 9259
+		WNS sp: 0.031
+		WNS hd: 0.017
+		# LUT : 40.33% (4.73%)
+		# Reg : 25.28% (1.86%)
+
+
+
+ec_adder :
+
+	new mont (optimised): 	
+		cycles: 12306
+		WNS sp: 0.283
+		WNS hd: 0.023
+		# LUT : 38.1%  (4.52%)
+		# Reg : 23.16% (1.85%)
+		MAS2 L: 15.06%	
+
+	new mont (8 states): 	
+		cycles: 18386
+		WNS sp: 0.149
+		WNS hd: 0.028
+		# LUT : 37.2% (4.72%)
+		# Reg : 21.4% (2.21%)
+		MAS2 L: 16.79%
+
+	old mont(12 states):
+		cycles: 24530
+		WNS sp: 0.234
+		WNS hd: 0.019
+		# LUT : 37.2% (4.75%)
+		# Reg : 21.9% (2.75%)
+		MAS2 L: 16.8%
+
+
+-----------------------------------------------------
+
+Montgomery optimization:
+
+	2.one cycle
+		cycles: 386
+		WNS sp: 0.297
+		WNS hd: 0.140
+		# LUT : 5.35%
+		# Reg : 1.84%
+
+	1.baseline
+		cycles: 769
+		WNS sp: 0.451
+		WNS hd: 0.041
+		# LUT : 5.08%
+		# Reg : 1.85%
+
+
+
+
+-----------------------------------------------------
+
+Modadder optimization (area):
+		
+	2.new 
+		cycles: 2
+		# LUT : 4.2%
+		# Reg : 1.80%
+
+	1.baseline
+		cycles: 2
+		# LUT : 4.2%
+		# Reg : 1.80%

@@ -1,0 +1,179 @@
+report_timing
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+INFO: [Timing 38-78] ReportTimingParams: -max_paths 1 -nworst 1 -delay_type max -sort_by slack.
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
+| Date         : Tue Dec  9 15:17:40 2025
+| Host         : KHALID-V running 64-bit major release  (build 9200)
+| Command      : report_timing
+| Design       : ecdsa_project_wrapper
+| Device       : 7z020-clg400
+| Speed File   : -1  PRODUCTION 1.12 2019-11-22
+| Design State : Physopt postRoute
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Report
+
+Slack (MET) :             0.023ns  (required time - arrival time)
+  Source:                 ecdsa_project_i/ecdsa_0/inst/u_calc_ecdsa/u_ec_mult_1/u_ecadder_1/u_montMul1/add_b_reg[128]/C
+                            (rising edge-triggered cell FDCE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            ecdsa_project_i/ecdsa_0/inst/u_calc_ecdsa/u_ec_mult_1/u_ecadder_1/u_montMul1/result_reg[2]/D
+                            (rising edge-triggered cell FDCE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk_fpga_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (clk_fpga_0 rise@10.000ns - clk_fpga_0 rise@0.000ns)
+  Data Path Delay:        9.792ns  (logic 5.380ns (54.942%)  route 4.412ns (45.058%))
+  Logic Levels:           37  (CARRY4=33 LUT3=4)
+  Clock Path Skew:        -0.063ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.737ns = ( 12.736 - 10.000 ) 
+    Source Clock Delay      (SCD):    3.029ns
+    Clock Pessimism Removal (CPR):    0.230ns
+  Clock Uncertainty:      0.154ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.300ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_fpga_0 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  ecdsa_project_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           1.193     1.193    ecdsa_project_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     1.294 r  ecdsa_project_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=68298, routed)       1.735     3.029    ecdsa_project_i/ecdsa_0/inst/u_calc_ecdsa/u_ec_mult_1/u_ecadder_1/u_montMul1/clk
+    SLICE_X78Y44         FDCE                                         r  ecdsa_project_i/ecdsa_0/inst/u_calc_ecdsa/u_ec_mult_1/u_ecadder_1/u_montMul1/add_b_reg[128]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X78Y44         FDCE (Prop_fdce_C_Q)         0.456     3.485 r  ecdsa_project_i/ecdsa_0/inst/u_calc_ecdsa/u_ec_mult_1/u_ecadder_1/u_montMul1/add_b_reg[128]/Q
+                         net (fo=4, routed)           1.012     4.497    ecdsa_project_i/ecdsa_0/inst/u_calc_ecdsa/u_ec_mult_1/u_ecadder_1/u_montMul1/add_b_reg_n_0_[128]
+    SLICE_X83Y38         LUT3 (Prop_lut3_I0_O)        0.124     4.621 r  ecdsa_project_i/ecdsa_0/inst/u_calc_ecdsa/u_ec_mult_1/u_ecadder_1/u_montMul1/add_a[130]_i_19/O
+                         net (fo=1, routed)           0.000     4.621    ecdsa_project_i/ecdsa_0/inst/u_calc_ecdsa/u_ec_mult_1/u_ecadder_1/u_montMul1/add_a[130]_i_19_n_0
+    SLICE_X83Y38         CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.532     5.153 r  ecdsa_project_i/ecdsa_0/inst/u_calc_ecdsa/u_ec_mult_1/u_ecadder_1/u_montMul1/add_a_reg[130]_i_3/CO[3]
+                         net (fo=1, routed)           0.000     5.153    ecdsa_project_i/ecdsa_0/inst/u_calc_ecdsa/u_ec_mult_1/u_ecadder_1/u_montMul1/add_a_reg[130]_i_3_n_0
+    SLICE_X83Y39         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     5.267 r  ecdsa_project_i/ecdsa_0/inst/u_calc_ecdsa/u_ec_mult_1/u_ecadder_1/u_montMul1/add_a_reg[134]_i_3/CO[3]
+                         net (fo=1, routed)           0.000     5.267    ecdsa_project_i/ecdsa_0/inst/u_calc_ecdsa/u_ec_mult_1/u_ecadder_1/u_montMul1/add_a_reg[134]_i_3_n_0
+    SLICE_X83Y40         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     5.381 r  ecdsa_project_i/ecdsa_0/inst/u_calc_ecdsa/u_ec_mult_1/u_ecadder_1/u_montMul1/add_a_reg[138]_i_3/CO[3]
+                         net (fo=1, routed)           0.000     5.381    ecdsa_project_i/ecdsa_0/inst/u_calc_ecdsa/u_ec_mult_1/u_ecadder_1/u_montMul1/add_a_reg[138]_i_3_n_0
+    SLICE_X83Y41         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     5.495 r  ecdsa_project_i/ecdsa_0/inst/u_calc_ecdsa/u_ec_mult_1/u_ecadder_1/u_montMul1/add_a_reg[142]_i_3/CO[3]
+                         net (fo=1, routed)           0.000     5.495    ecdsa_project_i/ecdsa_0/inst/u_calc_ecdsa/u_ec_mult_1/u_ecadder_1/u_montMul1/add_a_reg[142]_i_3_n_0
+    SLICE_X83Y42         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     5.609 r  ecdsa_project_i/ecdsa_0/inst/u_calc_ecdsa/u_ec_mult_1/u_ecadder_1/u_montMul1/add_a_reg[146]_i_3/CO[3]
+                         net (fo=1, routed)           0.000     5.609    ecdsa_project_i/ecdsa_0/inst/u_calc_ecdsa/u_ec_mult_1/u_ecadder_1/u_montMul1/add_a_reg[146]_i_3_n_0
+    SLICE_X83Y43         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     5.723 r  ecdsa_project_i/ecdsa_0/inst/u_calc_ecdsa/u_ec_mult_1/u_ecadder_1/u_montMul1/add_a_reg[150]_i_3/CO[3]
+                         net (fo=1, routed)           0.000     5.723    ecdsa_project_i/ecdsa_0/inst/u_calc_ecdsa/u_ec_mult_1/u_ecadder_1/u_montMul1/add_a_reg[150]_i_3_n_0
+    SLICE_X83Y44         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     5.837 r  ecdsa_project_i/ecdsa_0/inst/u_calc_ecdsa/u_ec_mult_1/u_ecadder_1/u_montMul1/add_a_reg[154]_i_3/CO[3]
+                         net (fo=1, routed)           0.000     5.837    ecdsa_project_i/ecdsa_0/inst/u_calc_ecdsa/u_ec_mult_1/u_ecadder_1/u_montMul1/add_a_reg[154]_i_3_n_0
+    SLICE_X83Y45         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     5.951 r  ecdsa_project_i/ecdsa_0/inst/u_calc_ecdsa/u_ec_mult_1/u_ecadder_1/u_montMul1/add_a_reg[158]_i_3/CO[3]
+                         net (fo=1, routed)           0.000     5.951    ecdsa_project_i/ecdsa_0/inst/u_calc_ecdsa/u_ec_mult_1/u_ecadder_1/u_montMul1/add_a_reg[158]_i_3_n_0
+    SLICE_X83Y46         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.065 r  ecdsa_project_i/ecdsa_0/inst/u_calc_ecdsa/u_ec_mult_1/u_ecadder_1/u_montMul1/add_a_reg[162]_i_3/CO[3]
+                         net (fo=1, routed)           0.000     6.065    ecdsa_project_i/ecdsa_0/inst/u_calc_ecdsa/u_ec_mult_1/u_ecadder_1/u_montMul1/add_a_reg[162]_i_3_n_0
+    SLICE_X83Y47         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.179 r  ecdsa_project_i/ecdsa_0/inst/u_calc_ecdsa/u_ec_mult_1/u_ecadder_1/u_montMul1/add_a_reg[166]_i_3/CO[3]
+                         net (fo=1, routed)           0.000     6.179    ecdsa_project_i/ecdsa_0/inst/u_calc_ecdsa/u_ec_mult_1/u_ecadder_1/u_montMul1/add_a_reg[166]_i_3_n_0
+    SLICE_X83Y48         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.293 r  ecdsa_project_i/ecdsa_0/inst/u_calc_ecdsa/u_ec_mult_1/u_ecadder_1/u_montMul1/add_a_reg[170]_i_3/CO[3]
+                         net (fo=1, routed)           0.000     6.293    ecdsa_project_i/ecdsa_0/inst/u_calc_ecdsa/u_ec_mult_1/u_ecadder_1/u_montMul1/add_a_reg[170]_i_3_n_0
+    SLICE_X83Y49         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.407 r  ecdsa_project_i/ecdsa_0/inst/u_calc_ecdsa/u_ec_mult_1/u_ecadder_1/u_montMul1/add_a_reg[174]_i_3/CO[3]
+                         net (fo=1, routed)           0.001     6.408    ecdsa_project_i/ecdsa_0/inst/u_calc_ecdsa/u_ec_mult_1/u_ecadder_1/u_montMul1/add_a_reg[174]_i_3_n_0
+    SLICE_X83Y50         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.522 r  ecdsa_project_i/ecdsa_0/inst/u_calc_ecdsa/u_ec_mult_1/u_ecadder_1/u_montMul1/add_a_reg[178]_i_3/CO[3]
+                         net (fo=1, routed)           0.000     6.522    ecdsa_project_i/ecdsa_0/inst/u_calc_ecdsa/u_ec_mult_1/u_ecadder_1/u_montMul1/add_a_reg[178]_i_3_n_0
+    SLICE_X83Y51         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.636 r  ecdsa_project_i/ecdsa_0/inst/u_calc_ecdsa/u_ec_mult_1/u_ecadder_1/u_montMul1/add_a_reg[182]_i_3/CO[3]
+                         net (fo=1, routed)           0.000     6.636    ecdsa_project_i/ecdsa_0/inst/u_calc_ecdsa/u_ec_mult_1/u_ecadder_1/u_montMul1/add_a_reg[182]_i_3_n_0
+    SLICE_X83Y52         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.750 r  ecdsa_project_i/ecdsa_0/inst/u_calc_ecdsa/u_ec_mult_1/u_ecadder_1/u_montMul1/add_a_reg[186]_i_3/CO[3]
+                         net (fo=1, routed)           0.000     6.750    ecdsa_project_i/ecdsa_0/inst/u_calc_ecdsa/u_ec_mult_1/u_ecadder_1/u_montMul1/add_a_reg[186]_i_3_n_0
+    SLICE_X83Y53         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.864 r  ecdsa_project_i/ecdsa_0/inst/u_calc_ecdsa/u_ec_mult_1/u_ecadder_1/u_montMul1/add_a_reg[190]_i_3/CO[3]
+                         net (fo=1, routed)           0.000     6.864    ecdsa_project_i/ecdsa_0/inst/u_calc_ecdsa/u_ec_mult_1/u_ecadder_1/u_montMul1/add_a_reg[190]_i_3_n_0
+    SLICE_X83Y54         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.978 r  ecdsa_project_i/ecdsa_0/inst/u_calc_ecdsa/u_ec_mult_1/u_ecadder_1/u_montMul1/add_a_reg[194]_i_3/CO[3]
+                         net (fo=1, routed)           0.000     6.978    ecdsa_project_i/ecdsa_0/inst/u_calc_ecdsa/u_ec_mult_1/u_ecadder_1/u_montMul1/add_a_reg[194]_i_3_n_0
+    SLICE_X83Y55         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.092 r  ecdsa_project_i/ecdsa_0/inst/u_calc_ecdsa/u_ec_mult_1/u_ecadder_1/u_montMul1/add_a_reg[198]_i_3/CO[3]
+                         net (fo=1, routed)           0.000     7.092    ecdsa_project_i/ecdsa_0/inst/u_calc_ecdsa/u_ec_mult_1/u_ecadder_1/u_montMul1/add_a_reg[198]_i_3_n_0
+    SLICE_X83Y56         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.206 r  ecdsa_project_i/ecdsa_0/inst/u_calc_ecdsa/u_ec_mult_1/u_ecadder_1/u_montMul1/add_a_reg[202]_i_3/CO[3]
+                         net (fo=1, routed)           0.000     7.206    ecdsa_project_i/ecdsa_0/inst/u_calc_ecdsa/u_ec_mult_1/u_ecadder_1/u_montMul1/add_a_reg[202]_i_3_n_0
+    SLICE_X83Y57         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.320 r  ecdsa_project_i/ecdsa_0/inst/u_calc_ecdsa/u_ec_mult_1/u_ecadder_1/u_montMul1/add_a_reg[206]_i_3/CO[3]
+                         net (fo=1, routed)           0.000     7.320    ecdsa_project_i/ecdsa_0/inst/u_calc_ecdsa/u_ec_mult_1/u_ecadder_1/u_montMul1/add_a_reg[206]_i_3_n_0
+    SLICE_X83Y58         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.434 r  ecdsa_project_i/ecdsa_0/inst/u_calc_ecdsa/u_ec_mult_1/u_ecadder_1/u_montMul1/add_a_reg[210]_i_3/CO[3]
+                         net (fo=1, routed)           0.000     7.434    ecdsa_project_i/ecdsa_0/inst/u_calc_ecdsa/u_ec_mult_1/u_ecadder_1/u_montMul1/add_a_reg[210]_i_3_n_0
+    SLICE_X83Y59         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.548 r  ecdsa_project_i/ecdsa_0/inst/u_calc_ecdsa/u_ec_mult_1/u_ecadder_1/u_montMul1/add_a_reg[214]_i_3/CO[3]
+                         net (fo=1, routed)           0.000     7.548    ecdsa_project_i/ecdsa_0/inst/u_calc_ecdsa/u_ec_mult_1/u_ecadder_1/u_montMul1/add_a_reg[214]_i_3_n_0
+    SLICE_X83Y60         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.662 r  ecdsa_project_i/ecdsa_0/inst/u_calc_ecdsa/u_ec_mult_1/u_ecadder_1/u_montMul1/add_a_reg[218]_i_3/CO[3]
+                         net (fo=1, routed)           0.000     7.662    ecdsa_project_i/ecdsa_0/inst/u_calc_ecdsa/u_ec_mult_1/u_ecadder_1/u_montMul1/add_a_reg[218]_i_3_n_0
+    SLICE_X83Y61         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.776 r  ecdsa_project_i/ecdsa_0/inst/u_calc_ecdsa/u_ec_mult_1/u_ecadder_1/u_montMul1/add_a_reg[222]_i_3/CO[3]
+                         net (fo=1, routed)           0.000     7.776    ecdsa_project_i/ecdsa_0/inst/u_calc_ecdsa/u_ec_mult_1/u_ecadder_1/u_montMul1/add_a_reg[222]_i_3_n_0
+    SLICE_X83Y62         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.890 r  ecdsa_project_i/ecdsa_0/inst/u_calc_ecdsa/u_ec_mult_1/u_ecadder_1/u_montMul1/add_a_reg[226]_i_3/CO[3]
+                         net (fo=1, routed)           0.000     7.890    ecdsa_project_i/ecdsa_0/inst/u_calc_ecdsa/u_ec_mult_1/u_ecadder_1/u_montMul1/add_a_reg[226]_i_3_n_0
+    SLICE_X83Y63         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.004 r  ecdsa_project_i/ecdsa_0/inst/u_calc_ecdsa/u_ec_mult_1/u_ecadder_1/u_montMul1/add_a_reg[230]_i_3/CO[3]
+                         net (fo=1, routed)           0.000     8.004    ecdsa_project_i/ecdsa_0/inst/u_calc_ecdsa/u_ec_mult_1/u_ecadder_1/u_montMul1/add_a_reg[230]_i_3_n_0
+    SLICE_X83Y64         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.118 r  ecdsa_project_i/ecdsa_0/inst/u_calc_ecdsa/u_ec_mult_1/u_ecadder_1/u_montMul1/add_a_reg[234]_i_3/CO[3]
+                         net (fo=1, routed)           0.000     8.118    ecdsa_project_i/ecdsa_0/inst/u_calc_ecdsa/u_ec_mult_1/u_ecadder_1/u_montMul1/add_a_reg[234]_i_3_n_0
+    SLICE_X83Y65         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.232 r  ecdsa_project_i/ecdsa_0/inst/u_calc_ecdsa/u_ec_mult_1/u_ecadder_1/u_montMul1/add_a_reg[238]_i_3/CO[3]
+                         net (fo=1, routed)           0.000     8.232    ecdsa_project_i/ecdsa_0/inst/u_calc_ecdsa/u_ec_mult_1/u_ecadder_1/u_montMul1/add_a_reg[238]_i_3_n_0
+    SLICE_X83Y66         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.346 r  ecdsa_project_i/ecdsa_0/inst/u_calc_ecdsa/u_ec_mult_1/u_ecadder_1/u_montMul1/add_a_reg[242]_i_3/CO[3]
+                         net (fo=1, routed)           0.000     8.346    ecdsa_project_i/ecdsa_0/inst/u_calc_ecdsa/u_ec_mult_1/u_ecadder_1/u_montMul1/add_a_reg[242]_i_3_n_0
+    SLICE_X83Y67         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.460 r  ecdsa_project_i/ecdsa_0/inst/u_calc_ecdsa/u_ec_mult_1/u_ecadder_1/u_montMul1/add_a_reg[246]_i_3/CO[3]
+                         net (fo=1, routed)           0.000     8.460    ecdsa_project_i/ecdsa_0/inst/u_calc_ecdsa/u_ec_mult_1/u_ecadder_1/u_montMul1/add_a_reg[246]_i_3_n_0
+    SLICE_X83Y68         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.574 r  ecdsa_project_i/ecdsa_0/inst/u_calc_ecdsa/u_ec_mult_1/u_ecadder_1/u_montMul1/add_a_reg[250]_i_3/CO[3]
+                         net (fo=1, routed)           0.000     8.574    ecdsa_project_i/ecdsa_0/inst/u_calc_ecdsa/u_ec_mult_1/u_ecadder_1/u_montMul1/add_a_reg[250]_i_3_n_0
+    SLICE_X83Y69         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.688 r  ecdsa_project_i/ecdsa_0/inst/u_calc_ecdsa/u_ec_mult_1/u_ecadder_1/u_montMul1/add_a_reg[254]_i_3/CO[3]
+                         net (fo=1, routed)           0.000     8.688    ecdsa_project_i/ecdsa_0/inst/u_calc_ecdsa/u_ec_mult_1/u_ecadder_1/u_montMul1/add_a_reg[254]_i_3_n_0
+    SLICE_X83Y70         CARRY4 (Prop_carry4_CI_CO[1])
+                                                      0.157     8.845 r  ecdsa_project_i/ecdsa_0/inst/u_calc_ecdsa/u_ec_mult_1/u_ecadder_1/u_montMul1/add_a_reg[255]_i_4/CO[1]
+                         net (fo=6, routed)           0.983     9.828    ecdsa_project_i/ecdsa_0/inst/u_calc_ecdsa/u_ec_mult_1/u_ecadder_1/u_montMul1/add_a_reg[255]_i_4_n_2
+    SLICE_X85Y72         LUT3 (Prop_lut3_I2_O)        0.329    10.157 r  ecdsa_project_i/ecdsa_0/inst/u_calc_ecdsa/u_ec_mult_1/u_ecadder_1/u_montMul1/C[304]_i_2_replica/O
+                         net (fo=2, routed)           0.681    10.838    ecdsa_project_i/ecdsa_0/inst/u_calc_ecdsa/u_ec_mult_1/u_ecadder_1/u_montMul1/C[304]_i_2_n_0_repN
+    SLICE_X85Y72         LUT3 (Prop_lut3_I1_O)        0.124    10.962 r  ecdsa_project_i/ecdsa_0/inst/u_calc_ecdsa/u_ec_mult_1/u_ecadder_1/u_montMul1/add_a[384]_i_3_replica_3/O
+                         net (fo=47, routed)          1.735    12.697    ecdsa_project_i/ecdsa_0/inst/u_calc_ecdsa/u_ec_mult_1/u_ecadder_1/u_montMul1/in4[384]_repN_3
+    SLICE_X75Y40         LUT3 (Prop_lut3_I1_O)        0.124    12.821 r  ecdsa_project_i/ecdsa_0/inst/u_calc_ecdsa/u_ec_mult_1/u_ecadder_1/u_montMul1/result[2]_i_1/O
+                         net (fo=1, routed)           0.000    12.821    ecdsa_project_i/ecdsa_0/inst/u_calc_ecdsa/u_ec_mult_1/u_ecadder_1/u_montMul1/result[2]_i_1_n_0
+    SLICE_X75Y40         FDCE                                         r  ecdsa_project_i/ecdsa_0/inst/u_calc_ecdsa/u_ec_mult_1/u_ecadder_1/u_montMul1/result_reg[2]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_fpga_0 rise edge)
+                                                     10.000    10.000 r  
+    PS7_X0Y0             PS7                          0.000    10.000 r  ecdsa_project_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           1.088    11.088    ecdsa_project_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    11.179 r  ecdsa_project_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=68298, routed)       1.557    12.736    ecdsa_project_i/ecdsa_0/inst/u_calc_ecdsa/u_ec_mult_1/u_ecadder_1/u_montMul1/clk
+    SLICE_X75Y40         FDCE                                         r  ecdsa_project_i/ecdsa_0/inst/u_calc_ecdsa/u_ec_mult_1/u_ecadder_1/u_montMul1/result_reg[2]/C
+                         clock pessimism              0.230    12.966    
+                         clock uncertainty           -0.154    12.812    
+    SLICE_X75Y40         FDCE (Setup_fdce_C_D)        0.032    12.844    ecdsa_project_i/ecdsa_0/inst/u_calc_ecdsa/u_ec_mult_1/u_ecadder_1/u_montMul1/result_reg[2]
+  -------------------------------------------------------------------
+                         required time                         12.844    
+                         arrival time                         -12.821    
+  -------------------------------------------------------------------
+                         slack                                  0.023    
+
+
+
+

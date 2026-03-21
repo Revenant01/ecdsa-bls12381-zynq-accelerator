@@ -1,0 +1,46 @@
+# Vivado project files (large, regenerable)
+*.xpr
+*.xsa
+*.dcp
+*.bit
+*.ltx
+*.log
+*.jou
+*.str
+*.pb
+
+# Vivado generated directories
+.Xil/
+vivado*/
+project_hw.cache/
+project_hw.gen/
+project_hw.hw/
+project_hw.ip_user_files/
+project_hw.runs/
+project_hw.sim/
+project_hw.srcs/constrs_1/
+*.zip
+
+# Xilinx SDK / Vitis workspace
+*.sdk/
+*.vitis/
+*.bsp/
+*.elf
+*.prj
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# scripts/generated/testvector.c is intentionally tracked.
+# It is auto-generated -- regenerate with:
+#   python scripts/testvectors.py ECDSA_verify <seed>
+
