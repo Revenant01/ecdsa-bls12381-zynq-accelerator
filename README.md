@@ -1,6 +1,5 @@
 # ECDSA Verification HW/SW Co-Design Accelerator
 
-**Group 36 — KU Leuven / Digital Design Project (DDP)**
 Target platform: Xilinx Zynq-7000 (7z020-clg400) · Clock: 100 MHz · Vivado 2023.1
 
 ---
